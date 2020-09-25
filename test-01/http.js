@@ -59,7 +59,9 @@ server.on('request', (request, response) => {
             content = "404";
             break;
     }
-    // response.writeHead(200, { 'Content-Type': 'text/html' });
+    // 解决汉字乱码问题
+    // response.writeHead(200, { 'Content-Type': 'text/html' });  // 普通文本
+    // response.setHeader('Content-Type', 'text/html; charset=utf-8');  // html格式文本
     // response.write('');
     // response.write('');
     response.end(`<head><meta charset="utf-8"/><body>

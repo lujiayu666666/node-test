@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nodeJs练习</title>
+
+    <!-- 
+    浏览器接收到html响应内容后，就会从上到下一次解析，在解析过程中，如果发现：
+    link
+    script
+    img
+    iframe
+    video
+    audio
+    等带有src 或者href （除去a标签）外，
+    这些属性标签（具有外连接的资源）的时候，浏览器会自动对这些资源发起新的请求。
+    页面中的每一个资源都是一次请求！ 
+-->
+
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box-img">
+            <img src="/static/image/b.jpg" alt="">
+        </div>
+        <h1><span>nodeJs</span>留言板</h1>
+        <button class="message-board"><a href="/post">发表留言</a></button>
+        <div class="cotent">
+            <ul>
+                {{each comments}}
+                <li><span>{{$value.name}}说：</span><span>{{$value.dateTime}}</span></li>
+                <div class="message-box">{{$value.message}}</div>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+<script src="/static/js/jquery-3.4.1.min.js"></script>
+
+</html>

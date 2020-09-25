@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script src="./node_modules/art-template/lib/template-web.js"></script>
+    <script type="text/template" id="tpl">
+        hello, 我叫{{name}} 今年 {{age}}岁 我来自{{from}} 我的爱好是：{{each aihao}} {{$value}} {{/each}}
+    </script>
+    <script>
+        var tpl = template('tpl', {
+            name: 'JY',
+            age: 27,
+            from: '大连',
+            aihao: ['足球', '电影', '美食', '音乐']
+        })
+
+        console.log(tpl);
+    </script>
+</body>
+
+</html>
